@@ -20,7 +20,7 @@
       },
       "assets": {
         "host01": [
-          {"file": "sqlite-json-101/*.json", "target": "~/data"}
+          {"file": "*.json", "target": "~/data"}
         ]
       }
     },
