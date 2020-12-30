@@ -19,6 +19,16 @@
         "text": "finish.md"
       }
     },
+    "assets": {
+        "host1": [
+          {"file": "albums.json", "target": "~/data"},
+          {"file": "comments.json", "target": "~/data"},
+          {"file": "photos.json", "target": "~/data"},
+          {"file": "posts.json", "target": "~/data"},
+          {"file": "todos.json", "target": "~/data"},
+          {"file": "users.json", "target": "~/data"}
+        ]
+    },
     "environment": {
       "showdashboards": true,
       "uilayout": "terminal-iframe"
