@@ -19,7 +19,7 @@
         "text": "finish.md"
       },
       "assets": {
-        "host1": [
+        "host01": [
           {"file": "sqlite-json-101/*.json", "target": "~/data"}
         ]
       }
