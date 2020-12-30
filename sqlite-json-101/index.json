@@ -1,5 +1,5 @@
 {
-    "title": "Airflow Quick Start",
+    "title": "SQLite and JSON",
     "description": "Learn how to use SQLite to store and retrieve JSON data",
     "details": {
       "steps": [
