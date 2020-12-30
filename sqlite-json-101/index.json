@@ -1,0 +1,29 @@
+{
+    "title": "Airflow Quick Start",
+    "description": "Learn how to use SQLite to store and retrieve JSON data",
+    "details": {
+      "steps": [
+        {
+          "title": "Step 1 - Setup our database",
+          "text": "step1.md"
+        },
+        {
+          "title": "Step 2 - Querying our JSON data",
+          "text": "step2.md"
+        }
+      ],
+      "intro": {
+        "text": "intro.md"
+      },
+      "finish": {
+        "text": "finish.md"
+      }
+    },
+    "environment": {
+      "showdashboards": true,
+      "uilayout": "terminal-iframe"
+    },
+    "backend": {
+      "imageid": "python:3.8"
+    }
+  }
