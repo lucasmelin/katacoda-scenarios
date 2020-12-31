@@ -4,7 +4,7 @@ In our data directory, we have the JSON files that come from our third-party. Fo
 
 We can look at the contents one of the `json` files.
 
-`cat users.json`
+`cat users.json`{{execute}}
 
 To load the data in our JSON files into our SQLite database, we'll write a simple [Python](https://www.python.org/) script.
 

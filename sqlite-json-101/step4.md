@@ -18,4 +18,6 @@ As you can see, loading our data into the database wasn't too complicated. We di
 
 We simply created two columns, one with an `id`, and the other with a raw dump of our JSON data. Super simple database schema design.
 
-Now, let's move on to querying our data!
+Now, let's exit our python session, and move on to querying our data!
+
+`exit()`{{execute}}
