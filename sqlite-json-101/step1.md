@@ -45,7 +45,7 @@ with closing(sqlite3.connect('test.db')) as conn:
         for file in filenames:
             with (Path("data") / f"{file}.json").open() as f_in:
                 data = json.load(f_in)
-                conn.execute(f"insert into {file} values (?, ?)", [{file}['id'], json.dumps(data)])
+                conn.execute(f"insert into {file} values (?, ?)", [file['id'], json.dumps(data)])
 
 print("Loaded JSON data")
 ```{{execute}}
