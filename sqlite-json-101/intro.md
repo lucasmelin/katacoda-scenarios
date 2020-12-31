@@ -1,8 +1,8 @@
 ## Welcome!
 
-Let's pretend for a moment that you've been given a bunch of JSON data from a third-party, and you need a way for others to access the data and query it using SQL.
+Let's pretend for a moment that you've been given a bunch of JSON data from a third-party. You've been asked to join the data together and generate some csv exports. You also need a way for others to access the data and query it using SQL.
 
-You might try looking at the JSON data and designing a database schema that matches the JSON data. Then, you might build a script that takes your JSON data and transforms it into a tabular format for loading into your database.
+You think to start by looking at the JSON data and designing a relational database schema that matches the JSON data. Then, you might build a script that takes your JSON data and transforms it into a tabular format for loading into your database.
 
 But that approach can be slow and full of pitfalls:
   * Designing a database schema that matches our data can take time.

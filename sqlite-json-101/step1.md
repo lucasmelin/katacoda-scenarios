@@ -1,58 +1,13 @@
-## Loading our data
-
-In our data directory, we have a few dummy JSON files.
+In our data directory, we have the JSON files that come from our third-party. For this scenario, we're using data from [JSON Placeholder](https://jsonplaceholder.typicode.com/).
 
 `ls -lrt data`{{execute}}
 
-For this example, we'll use Python to load the data in our JSON files into our SQLite database.
+We can look at the contents one of the `json` files.
+
+`cat users.json`
+
+To load the data in our JSON files into our SQLite database, we'll write a simple [Python](https://www.python.org/) script.
 
 To start working with Python, use the following command:
 
 `python`{{execute}}
-
-We'll start by collecting all the filenames in our data directory, excluding the extension.
-
-```
-from pathlib import Path
-
-files = list(Path("data").glob('**/*.json'))
-filenames = [f.stem for f in files]
-
-print(filenames)
-```{{execute}}
-
-Next, we'll create a database table for every one of our files:
-
-```
-import sqlite3
-from contextlib import closing
-
-with closing(sqlite3.connect('test.db')) as conn:
-    with conn:
-        for filename in filenames:
-            conn.execute(f"CREATE TABLE {filename} (id varchar(3), data json)")
-
-print("Created tables")
-```{{execute}}
-
-Now we can load the contents of each file into the corresponding database table:
-
-```
-import json
-
-with closing(sqlite3.connect('test.db')) as conn:
-    with conn:
-        for file in files:
-            with file.open() as input_file:
-                data = json.load(input_file)
-                for record in data:
-                    conn.execute(f"insert into {file.stem} values (?, ?)", [record['id'], json.dumps(record)])
-
-print("Loaded JSON data")
-```{{execute}}
-
-As you can see, it was relatively easy to load our data into the database. We didn't need to design each table individually, or choose the size or data type of each column. We also didn't need to transform the JSON data into a tabular format like a csv, or do any other manipulations to our data.
-
-We simply created two columns, one with an `id`, and the other with a raw dump of our JSON data.
-
-Now, let's move on to querying our data!

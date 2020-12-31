@@ -1,15 +1,39 @@
 {
-    "title": "SQLite and JSON",
+    "title": "SQLite: Working with JSON data",
     "description": "Learn how to use SQLite to store and retrieve JSON data",
     "details": {
       "steps": [
         {
-          "title": "Step 1 - Setup our database",
+          "title": "Step 1 - Overview of our data",
           "text": "step1.md"
         },
         {
-          "title": "Step 2 - Querying our JSON data",
+          "title": "Step 2 - Getting a list of our data files",
           "text": "step2.md"
+        },
+        {
+          "title": "Step 3 - Creating our database tables",
+          "text": "step3.md"
+        },
+        {
+          "title": "Step 4 - Loading the JSON data",
+          "text": "step4.md"
+        },
+        {
+          "title": "Step 5 - Setting up the SQLite CLI",
+          "text": "step5.md"
+        },
+        {
+          "title": "Step 6 - SQLite's JSON1 Extension",
+          "text": "step6.md"
+        },
+        {
+          "title": "Step 7 - Querying and saving data",
+          "text": "step7.md"
+        },
+        {
+          "title": "Step 8 - Performing JOINs on JSON data",
+          "text": "step8.md"
         }
       ],
       "intro": {
