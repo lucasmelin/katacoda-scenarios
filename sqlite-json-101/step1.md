@@ -29,8 +29,8 @@ from contextlib import closing
 
 with closing(sqlite3.connect('test.db')) as conn:
     with conn:
-        for file in filenames:
-            conn.execute(f"CREATE TABLE {file} (id varchar(3), data json)")
+        for filename in filenames:
+            conn.execute(f"CREATE TABLE {filename} (id varchar(3), data json)")
 
 print("Created tables")
 ```{{execute}}
@@ -42,10 +42,11 @@ import json
 
 with closing(sqlite3.connect('test.db')) as conn:
     with conn:
-        for file in filenames:
-            with (Path("data") / f"{file}.json").open() as f_in:
-                data = json.load(f_in)
-                conn.execute(f"insert into {file} values (?, ?)", [file['id'], json.dumps(data)])
+        for file in files:
+            with file.open() as input_file:
+                data = json.load(input_file)
+                for record in data:
+                    conn.execute(f"insert into {file.stem} values (?, ?)", [record['id'], json.dumps(record)])
 
 print("Loaded JSON data")
 ```{{execute}}
